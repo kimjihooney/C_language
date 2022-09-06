@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 
 int main(void)
@@ -13,13 +15,32 @@ int main(void)
     int A = 0;
     int B = 0;
 
-    A = 10;
-    B = 20;
+    A = 9;
+    B = 8;
 
-    printf("%d", A+B);
+    printf("%d\n", A+B);
 
     //step4
-    
+    printf("%d\n", A-B);
+
+    //step5
+    printf("%d\n", A*B);
+
+    //step6
+    printf("%f\n", (float)A/(float)B);
+
+    //step7
+    srand(time(NULL));
+    A = rand() % 10000 + 1;
+    B = rand() % 10000 + 1;
+
+    printf("\n\nStep7\n");
+    printf("%d\n", A+B);
+    printf("%d\n", A-B);
+    printf("%d\n", A*B);
+    printf("%d\n", A/B);
+    printf("%d\n", A%B);
+
 
 
 
