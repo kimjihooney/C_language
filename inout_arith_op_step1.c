@@ -105,22 +105,33 @@ int main(void)
     // printf("%d\n", (a*b)%c);
     // printf("%d\n", ((a%c)*(b%c))%c);
 
-    int mul1[3] = {0, };
-    int mul2[3] = {0, };
+    int mul1_100;
+    int mul1_10;
+    int mul1_1;
 
-    for(int i=0;i<3;i++)
-    {
-        scanf("%d", &mul1[i]);
-    }
-    
-    printf("%d\n\n",mul1[3]);
+    int mul2_100;
+    int mul2_10;
+    int mul2_1;
 
-    for(int i=0; i<4; i++)
-    {
-        printf("%d\n",mul1[i]);
-    }
+    int mul1;
+    int mul2;
+
+    scanf("%d", &mul1);
+    scanf("%d", &mul2);
+
+    mul1_100 = mul1 / 100;
+    mul1_10 = (mul1 - mul1_100*100) / 10;
+    mul1_1 = (mul1 - mul1_100*100 - mul1_10*10);
+
+    mul2_100 = mul2 / 100;
+    mul2_10 = (mul2 - mul2_100*100) / 10;
+    mul2_1 = (mul2 - mul2_100*100 - mul2_10*10);
 
 
+    printf("%d\n", mul1*mul2_1);
+    printf("%d\n", mul1*mul2_10);
+    printf("%d\n", mul1*mul2_100);
+    printf("%d\n", mul1*mul2);
 
 
 
