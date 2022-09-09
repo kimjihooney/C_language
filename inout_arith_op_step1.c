@@ -105,34 +105,43 @@ int main(void)
     // printf("%d\n", (a*b)%c);
     // printf("%d\n", ((a%c)*(b%c))%c);
 
-    int mul1_100;
-    int mul1_10;
-    int mul1_1;
+    // int mul1_100;
+    // int mul1_10;
+    // int mul1_1;
 
-    int mul2_100;
-    int mul2_10;
-    int mul2_1;
+    // int mul2_100;
+    // int mul2_10;
+    // int mul2_1;
 
-    int mul1;
-    int mul2;
+    // int mul1;
+    // int mul2;
 
-    scanf("%d", &mul1);
-    scanf("%d", &mul2);
+    // scanf("%d", &mul1);
+    // scanf("%d", &mul2);
 
-    mul1_100 = mul1 / 100;
-    mul1_10 = (mul1 - mul1_100*100) / 10;
-    mul1_1 = (mul1 - mul1_100*100 - mul1_10*10);
+    // mul1_100 = mul1 / 100;
+    // mul1_10 = (mul1 - mul1_100*100) / 10;
+    // mul1_1 = (mul1 - mul1_100*100 - mul1_10*10);
 
-    mul2_100 = mul2 / 100;
-    mul2_10 = (mul2 - mul2_100*100) / 10;
-    mul2_1 = (mul2 - mul2_100*100 - mul2_10*10);
+    // mul2_100 = mul2 / 100;
+    // mul2_10 = (mul2 - mul2_100*100) / 10;
+    // mul2_1 = (mul2 - mul2_100*100 - mul2_10*10);
 
 
-    printf("%d\n", mul1*mul2_1);
-    printf("%d\n", mul1*mul2_10);
-    printf("%d\n", mul1*mul2_100);
-    printf("%d\n", mul1*mul2);
+    // printf("%d\n", mul1*mul2_1);
+    // printf("%d\n", mul1*mul2_10);
+    // printf("%d\n", mul1*mul2_100);
+    // printf("%d\n", mul1*mul2);
 
+   
+
+    //25083번
+    printf("         ,r'\"7\n");
+    printf("r`-_   ,'  ,/\n");
+    printf(" \\. \". L_r'\n");
+    printf("   `~\\/\n");
+    printf("      |\n");
+    printf("      |\n");
 
 
     
