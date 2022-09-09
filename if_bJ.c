@@ -12,6 +12,7 @@ int main(void)
 
     
     if(abs(A) <= 10000 && abs(B) <= 10000)
+    //abs는 stdlib.h 필요함
     {
         if(A>B)
         {
