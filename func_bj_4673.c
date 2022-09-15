@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define range 100
+#define range 10000
 
 int d_num_db(int p_num);
 int check_self_num(int p_self_num);
@@ -17,31 +17,22 @@ int main(void)
     for(int i = 1; i <= range; i++)
     {
         num_db[i] = d_num_db(i);
-        printf("%d - %d\n", i, num_db[i]);
+        //printf("%d - %d\n", i, num_db[i]);
     }
     
 
     //1~10000까지 숫자를 d(n)데이터베이스와 비교하며 self number 검출
     for(self_num = 1; self_num <= range; self_num++)
     {
+        flag = 0;
         for(int i = 1; i <= range; i++)
-        {
-            flag = 1;
-            if(num_db[i] == self_num)
-            {
-                // printf("(%d번째)", i);
-                // printf("%d = ", self_num);
-                // printf("%d\n", num_db[i]);
-                //printf("%d는 셀프넘버 아님\n", self_num);
-                
-            }
+        {            
             if(num_db[i] != self_num)
             {
-                //printf("%d\n", num_db[i]);
+                flag++;                
             }
-            
         }
-
+        if(flag == range) printf("%d\n", self_num);
     }
 
     // for(int i = 1; i <= range; i++)
