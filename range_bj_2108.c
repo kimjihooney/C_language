@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 #define len 10001
 
@@ -31,6 +32,7 @@ int main()
     printf("center is ");
     get_center(N, num);
     
+    printf("max count is ");
     get_max_count(N, num);
     
     int max;
@@ -56,6 +58,7 @@ void get_average(int N, int *num)
     }
     
     avr = sum / N;
+    if(avr < 0) avr -= 1;
     
     printf("%d\n", avr);
 }
@@ -86,68 +89,56 @@ void get_center(int N, int *num)
 
 void get_max_count(int N, int *num)
 {
-    int count_arr[N];
-    int temp;
-    int second_min;
+    int arr[8000] = {0, }; //0 ~ 8000 까지의 배열을 -> -4000 ~ 4000 숫자에 넣는다.
+    int max;
     int index;
+    int temp;
+    int second;
     
+
     for(int i = 0; i < N; i++)
     {
-        count_arr[i] = 0;
+        if(num[i] != 0)
+        {
+            arr[num[i]+4000]++;
+        }
     }
-    
+
     for(int i = 0; i < N-1; i++)
     {
         for(int j = 0; j < N-1; j++)
         {
-            if(num[j] > num[j+1]) // min부터 순차적으로
+            if(arr[j] < arr[j+1])
             {
-                temp = num[j];
-                num[j] = num[j+1];
-                num[j+1] = temp;
-            }
+                index = j + 1;
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }      
         }
     }
-    
-    for(int i = 0; i < N; i++)
+
+    if(arr[0] == arr[1])
     {
-        if(num[i] != num[i+1])
+        for(int i = 0; i < N-1; i++)
         {
-            count_arr[i]++;
-        }
-        else
-        {
-            for(int j = 0; j < N; j++)
+            for(int j = 0; j < N-1; j++)
             {
-                if(num[i] == num[j])
+                if(num[j] > num[j+1])
                 {
-                    count_arr[i]++;
+                    temp = num[j];
+                    num[j] = num[j+1];
+                    num[j+1] = temp;
                 }
             }
-        }
+        }    
+    second = num[1];
+
+    printf("%d\n", second);
+
+
     }
-    
-    for(int i = 0; i < N-1; i++)
-    {
-        for(int j = 0; j < N-1; j++)
-        {
-            if(count_arr[j] < count_arr[j+1]) // max부터 순차적으로
-            {
-                temp = count_arr[j];
-                count_arr[j] = count_arr[j+1];
-                count_arr[j+1] = temp;
-            }
-        }
-    }
-    
-    
-    for(int i = 0; i < N; i++)
-    {
-        if(count_arr[i] != count_arr[i+1])
-        {
-            printf("%d", count_arr[0]);
-        }
-    }
+    else printf("%d\n", index - 4000);
     
 }
 
@@ -203,7 +194,6 @@ void get_diff(int max, int min)
     //printf("min is %d\n", min);
     printf("%d", max - min);
 }
-
 
 
 
